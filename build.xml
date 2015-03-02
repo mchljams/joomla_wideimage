@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="WideImage" default="dist" basedir="." description="Packages the WideImage library for Joomla">
+    <!-- ============================================  -->
+    <!-- (DEFAULT)  Target: dist                       -->
+    <!-- ============================================  -->
+    <target name="dist" depends="">
+        <!-- -->
+        <echo msg="Creating Temporary Build Directory..." />
+        <exec command="if [ -d './build' ]; then echo 'true'; else echo 'false'; fi;" outputProperty="output.IS_DIRECTORY_EXISTS" />
+        <if>
+            <equals arg1="${output.IS_DIRECTORY_EXISTS}" arg2="true" />
+            <then>
+                <!-- If dir exists -->
+                <echo msg="Build directory already exists" />
+            </then>
+            <else>
+                <!-- If dir doesn't exist -->
+                <echo msg="Creating directory ./build" />
+                <mkdir dir="./build" />
+            </else>
+        </if>
+        <echo msg=" " />
+
+        <!--  -->
+        <echo msg="Creating directory ./build/packages" />
+        <mkdir dir="./build/packages" />
+        <input propertyname="test" defaultValue="no" validargs="yes,no">Phing?</input>
+        <!-- -->
+        <echo msg="Moving and Compressing WideImage Component..." />
+        <zip destfile="./build/packages/com_wideimage.zip" basedir="./com_wideimage" />
+        <echo msg=" " />
+
+        <!-- -->
+        <echo msg="Moving and Compressing WideImage Library..." />
+        <zip destfile="./build/packages/lib_wideimage.zip" basedir="./lib_wideimage" />
+        <echo msg=" " />
+
+        <!-- -->
+        <echo msg="Moving and Compressing WideImage Plugin..." />
+        <zip destfile="./build/packages/plg_wideimage.zip" basedir="./plg_wideimage" />
+        <echo msg=" " />
+
+        <!-- -->
+        <echo msg="Moving the package manifest..." />
+        <copy file="./pkg_wideimage.xml" tofile="./build/pkg_wideimage.xml" />
+        <echo msg=" " />
+
+        <!-- -->
+        <echo msg="Compressing Full Package..." />
+        <zip destfile="../pkg_wideimage.zip" basedir="./build" />
+        <echo msg=" " />
+
+        <!-- -->
+        <echo msg="Removing Temporary Build Directory..."/>
+        <delete dir="./build" />
+        <echo msg=" " />
+        <!-- -->
+        <echo msg="WideImage Package Complete." />
+    </target>
+</project>

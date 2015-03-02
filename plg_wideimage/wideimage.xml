@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="system" method="upgrade">
+    <name>System - WideImage</name>
+    <author>Mike Pisula</author>
+    <creationDate>March 2015</creationDate>
+    <copyright></copyright>
+    <license>GNU General Public License version 2 or later.</license>
+    <authorEmail>mike@harpgraphics.com</authorEmail>
+    <authorUrl>http://harpgraphics.com</authorUrl>
+    <version>1.0.0</version>
+    <description>Plugin to register the WideImage library in Joomla. WideImage is an object-oriented library for image manipulation. It requires PHP 5.2+ with GD2 extension. The library provides a simple way to loading, manipulating and saving images in the most common image formats.</description>
+    <files>
+        <filename plugin="wideimage">wideimage.php</filename>
+        <filename>index.html</filename>
+    </files>
+</extension>

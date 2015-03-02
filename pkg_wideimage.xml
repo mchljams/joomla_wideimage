@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="1.6">
+    <name>WideImage Package</name>
+    <packagename>wideimage</packagename>
+    <version>1.0.0</version>
+    <url>http://www.harpgraphics.com/</url>
+    <packager>Harp Graphics</packager>
+    <packagerurl>http://www.harpgraphics.com/</packagerurl>
+    <description>Package for WideImage Library</description>
+    <update>http://www.harpgraphics.com/update</update>
+    <files folder="packages">
+        <file type="component"  id="com_wideimage">com_wideimage.zip</file>
+        <file type="library"    id="lib_wideimage">lib_wideimage.zip</file>
+        <file type="plugin"     id="wideimage"  group="system">plg_wideimage.zip</file>
+    </files>
+</extension>
